@@ -44,12 +44,18 @@ router.get('/view', function (req, res, next) {
 /* Create New customer */
 router.post('/add', function (req, res, next) {
 
+  let firstName = req.body.firstName;
+  let lastName = req.body.lastName;
+  let email = req.body.email;
+  let phone = req.body.phone;
+  let dob = req.body.dob;
+
   let customerObj = new customerModel({
-    firstName: 'test1',
-    lastName: 'test',
-    email: 'test@test.com',
-    phone: '1234567890',
-    dob: '01-01-2022'
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phone: phone,
+    dob: dob
   });
 
   customerObj.save(function (err, customerObj) {
@@ -69,21 +75,28 @@ router.post('/add', function (req, res, next) {
 
 /* Update existing customer */
 router.put('/update', function (req, res, next) {
-  const userId = req.query.userId;
+  
+  const userId = req.body.userId;
+
+  let firstName = req.body.firstName;
+  let lastName = req.body.lastName;
+  let email = req.body.email;
+  let phone = req.body.phone;
+  let dob = req.body.dob;
 
   let customerObj = {
-    firstName: 'test2',
-    lastName: 'test',
-    email: 'test@test.com',
-    phone: '1234567899896',
-    dob: '01-02-2022'
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phone: phone,
+    dob: dob
   };
 
   customerModel.findByIdAndUpdate(userId, customerObj, function (err, customerResponse) {
     if (err) {
       res.send({ status: 500, message: 'Unable to update the Customers' });
     } else {
-      res.send({ status: 200, results: customerResponse });
+      res.send({ status: 200, results: customerObj });
     }
   })
 });
