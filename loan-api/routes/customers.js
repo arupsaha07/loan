@@ -23,19 +23,18 @@ router.get('/list', function (req, res, next) {
 
 
 /* GET Details of specific Customer */
-router.get('/view', function (req, res, next) {
+router.get('/view', (req, res) => {
 
-  const userId = req.query.userId;
+  const customerId = req.query.customerId;
 
-  customerModel.findById(userId, function (err, customerResponse) {
+  customerModel.findById(customerId, function (err, customerResponse) {
     if (err) {
       res.send({ status: 500, message: 'Unable to find the Customers' });
     } else {
       res.send({ status: 200, results: customerResponse });
     }
-  })
+  });
 });
-
 
 
 
@@ -75,7 +74,7 @@ router.post('/add', function (req, res, next) {
 
 /* Update existing customer */
 router.put('/update', function (req, res, next) {
-  
+
   const userId = req.body.userId;
 
   let firstName = req.body.firstName;

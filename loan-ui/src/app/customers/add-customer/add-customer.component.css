@@ -1,0 +1,46 @@
+h2{
+    font-size: var(--fs-large);
+    text-transform: capitalize;
+    margin-bottom: var(--large-gap);
+}
+form div{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--mid-gap);
+    grid-auto-flow: row;
+}
+
+.button {
+    text-decoration: none;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--white-color);
+    margin-top: var(--mid-gap);
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: .25rem;
+    font-size: var(--fs-primary);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.button:hover{
+    box-shadow: 0 4px 6px rgb(33 76 88 / 49%);
+    cursor: pointer;
+}
+.button:disabled{
+    cursor: not-allowed;
+    background-color: var(--light-color);
+    color: var(--secondary-light-color);
+    border-color: var(--light-color);
+}
+.button:disabled:hover{
+    box-shadow: none;
+}
+input[type=text]{
+    height: 2.75rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-bottom: 1px solid var(--secondary-light-color);
+}
+input[type=text]:focus-visible{
+    outline: none;
+}

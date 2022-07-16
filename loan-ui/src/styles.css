@@ -1,4 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --white-color: #ffffff;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  --light-color: #e9ecf3;
+  --dark-color: #2c323f;
+
+  --primary-color: #4c6ef8;
+  --secondary-color: #424242;
+  --secondary-light-color:#919191;
+  --warning-color: #fed361;
+  --danger-color: #ff4244;
+  --success-color: #5dca04;
+  --info-color: #06b5dd;
+
+  --fs-small: .75rem;
+  --fs-primary: 1rem;
+  --fs-large: 2.5rem;
+  --fs-xl: 3rem;
+
+  --fw-light: 300;
+  --fw-mid: 400;
+  --fw-bold: 500;
+
+  --small-gap: 1rem;
+  --mid-gap: 1.5rem;
+  --large-gap: 2rem
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: var(--fw-mid);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

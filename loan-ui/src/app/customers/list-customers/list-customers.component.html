@@ -1,0 +1,29 @@
+<div class="customer-heading">
+    <h2>All Customers</h2>
+    <a class="button" [routerLink]="'add'">
+        <span class="material-symbols-outlined">add</span>
+    </a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th class="column1">#</th>
+            <th class="column2">First Name</th>
+            <th class="column3">Last Name</th>
+            <th class="column4">Email</th>
+            <th class="column5">Phone No</th>
+            <th class="column6">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customerList; let customerIndex = index">
+            <td class="column1">{{customerIndex+1}}</td>
+            <td class="column2">{{customer.firstName}}</td>
+            <td class="column3">{{customer.lastName}}</td>
+            <td class="column4">{{customer.email}}</td>
+            <td class="column5">{{customer.phone}}</td>
+            <td class="column6"><a class="button" [routerLink]="['view', customer._id]">View Detail</a></td>
+        </tr>
+    </tbody>
+</table>

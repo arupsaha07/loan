@@ -1,0 +1,28 @@
+<div *ngIf="customerDetails" class="customer-details">
+    <div class="profile-thumb">{{customerDetails.firstName.charAt(0) + customerDetails.lastName.charAt(0)}}</div>
+    <h2>{{customerDetails.firstName}} {{customerDetails.lastName}}</h2>
+</div>
+
+<ul *ngIf="customerDetails">
+    <li><span>First Name</span><span>{{customerDetails?.firstName}}</span></li>
+    <li><span>Last Name</span><span>{{customerDetails.lastName}}</span></li>
+    <li><span>Pnone Number</span><span>{{customerDetails.phone}}</span></li>
+    <li><span>Date of Birth</span><span>{{customerDetails.dob}}</span></li>
+    <li><span>Email</span><span>{{customerDetails.email}}</span></li>
+    <li><span>Gender</span></li>
+    <li><span>Present Address</span></li>
+    <li><span>Permanent Address</span></li>
+    <li><span>Occupation</span></li>
+    <li><span>Company</span></li>
+    <li><span>Loan Account Number</span></li>
+    <li><span>Loan Type</span></li>
+    <li><span>Loan Amount</span></li>
+    <li><span>Status</span></li>
+    <li><span>Loan Application Date</span></li>
+    <li><span>Loan Disbursement Date</span></li>
+    <li><span>Loan Duration</span></li>
+    <li><span>Repayment Option</span></li>
+    <li><span>Repayment Option</span></li>
+    <li><span>Repayment Option</span></li>
+
+</ul>

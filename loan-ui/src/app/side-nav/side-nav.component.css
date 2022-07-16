@@ -1,4 +1,35 @@
 .sidenav-container {
-  width: 300px;
+  background-color: var(--white-color);
   height: 100%;
+}
+.sidenav-container img{
+  padding: 2rem;
+  display: block;
+  margin: auto;
+}
+.sidenav-container ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav-container ul li {
+  list-style: none;
+  border-bottom: 1px solid var(--light-color);
+}
+
+.sidenav-container ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.sidenav-container ul li a.active{
+  color: var(--primary-color);
+}
+
+.sidenav-container ul li a span:nth-child(2) {
+  line-height: 1rem;
+  padding-left: .8rem;
 }

@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var cors = require('cors');
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/LoanManager');
 
@@ -11,8 +13,13 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var customersRouter = require('./routes/customers');
 var loansRouter = require('./routes/loans');
+var paymentsRouter = require('./routes/payments');
+var invoicesRouter = require('./routes/invoices');
+var settingsRouter = require('./routes/settings');
 
 var app = express();
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +35,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/customers', customersRouter);
 app.use('/loans', loansRouter);
+// app.use('./audit', auditRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

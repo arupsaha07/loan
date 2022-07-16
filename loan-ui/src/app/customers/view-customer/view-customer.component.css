@@ -1,0 +1,36 @@
+
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+ul li{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: .75rem 1rem;
+}
+ul li:nth-child(odd) {
+    background-color: var(--light-color);
+}
+.profile-thumb{
+    background-color: var(--success-color);
+    color: var(--white-color);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-large);
+    text-transform: uppercase;
+}
+h2{
+    font-size: var(--fs-large);
+    margin-left: var(--large-gap);
+    text-transform: capitalize;
+}
+.customer-details{
+    margin-bottom: var(--large-gap);
+    display: flex;
+    align-items: center;
+}

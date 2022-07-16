@@ -1,0 +1,11 @@
+<h2>add customer details</h2>
+<form #addCustomerForm="ngForm" (submit)="addCustomer(addCustomerForm)">
+    <div>
+        <input type="text" [(ngModel)]="firstname" name="firstname" placeholder="First Name" required>
+        <input type="text" [(ngModel)]="lastname" name="lastname" placeholder="Last Name">
+        <input type="text" [(ngModel)]="email" name="email" placeholder="Email Id">
+        <input type="text" [(ngModel)]="phone" name="phone" placeholder="Phone">
+        <input type="text" [(ngModel)]="dob" name="dob" placeholder="Date of Birth"> 
+    </div>
+    <button type="submit" class="button" [disabled]="!addCustomerForm.valid">Add addCustomer</button>
+</form>
