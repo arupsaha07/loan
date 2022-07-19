@@ -1,0 +1,33 @@
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: sidebar;
+}
+
+.main-content {
+    grid-area: content;
+    position: relative;
+    height: calc(100% - 5rem);
+    z-index: 1;
+}
+
+.main-content-container {
+    min-height: 100%;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+    grid-template-rows: max-content 1fr max-content;
+    grid-template-areas:
+        "sidebar header header"
+        "sidebar content content"
+        "sidebar footer footer";
+    min-height: 100vh;
+}

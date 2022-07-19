@@ -1,0 +1,26 @@
+<div class="sidenav-container border-end h-100">
+    <div class="logo shadow-sm">
+        <img class="d-block mx-auto py-3" src="{{logoSrc}}" alt="{{logoAlt}}" />
+    </div>
+
+    <ul class="nav flex-column">
+        <li class="nav-item border-bottom">
+            <a class="nav-link d-flex align-items-center py-3 ps-4" routerLinkActive="active" [routerLink]="'dashboard'">
+                <span class="material-symbols-outlined pe-3">space_dashboard</span>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item border-bottom">
+            <a class="nav-link d-flex align-items-center py-3 ps-4" routerLinkActive="active" [routerLink]="'customers'">
+                <span class="material-symbols-outlined pe-3">account_circle</span>
+                <span>Customers</span>
+            </a>
+        </li>
+        <li class="nav-item border-bottom">
+            <a class="nav-link d-flex align-items-center py-3 ps-4" routerLink="/loans">
+                <span class="material-symbols-outlined pe-3">payments</span>
+                <span>Loans</span>
+            </a>
+        </li>
+    </ul>
+</div>

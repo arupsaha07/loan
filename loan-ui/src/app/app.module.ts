@@ -7,12 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { HeaderComponent } from './header/header.component';
 import { CustomerService } from './services/customer.service';
-import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BackendLayoutComponent } from './layouts/backend-layout/backend-layout.component';
+import { FrontendLayoutComponent } from './layouts/frontend-layout/frontend-layout.component';
+import { SharedModule } from './shared/shared.module';
 
 // import { MatToolbarModule } from '@angular/material/toolbar';
 // import { MatIconModule } from '@angular/material/icon';
@@ -25,17 +24,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent,
-    HeaderComponent,
-    FooterComponent,
-    DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BackendLayoutComponent,
+    FrontendLayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
     // MatToolbarModule,
     // MatIconModule,
     // MatSidenavModule,

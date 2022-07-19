@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './auth/auth.guard';
+import { BackendLayoutComponent } from './layouts/backend-layout/backend-layout.component';
+import { FrontendLayoutComponent } from './layouts/frontend-layout/frontend-layout.component';
 
 const routes: Routes = [
-
   {
-    path: 'login',
-    component: LoginComponent
+    path: '',
+    component: FrontendLayoutComponent,
+    loadChildren: () => import('./front-end/frontend-routing.module').then(m => m.FrontEndRoutingModule)
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'customers',
-    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
-  },
-  { path: '**', component: PageNotFoundComponent }
+    path:'backend',
+    canActivate:[AuthGuard],
+    component: BackendLayoutComponent,
+    loadChildren: () => import('./backend/backend-routing.module').then(m => m.BackendRoutingModule) 
+  }
 ];
 
 @NgModule({
